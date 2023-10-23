@@ -7,5 +7,5 @@ It uses ultra-sonic sensors to find the distance of objects and servo motors whi
 
 # Group Members
 Khanh - Programming code
-kelvin - Design 3D prosthetic arm
+Kelvin - Design 3D prosthetic arm
 
