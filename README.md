@@ -6,6 +6,6 @@ A biomedical prosthetic arm for rock climbing which uses a vairety of sensor.
 It uses ultra-sonic sensors to find the distance of objects and servo motors which closes and open the hand when a certain distance is reached.
 
 # Group Members
-Khanh - Programming code
-Kelvin - Design 3D prosthetic arm
+### Khanh - Programming code
+### Kelvin - Design 3D prosthetic arm
 
