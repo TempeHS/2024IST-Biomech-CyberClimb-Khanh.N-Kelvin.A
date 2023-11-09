@@ -9,18 +9,35 @@
 */
 
 #include <Servo.h>
+#include "Ultrasonic.h"
 
 Servo myServo;  // create servo object to control a servo
 
 static unsigned int degreeOfMovement = 180;    // variable to read the value from the analog pin
+static unsigned int myServoPin = 7;
+static unsigned int myUSPin = 6;
+
+Ultrasonic myUSsensor(myUSPin);
 
 void setup() {
-  myServo.attach(9);  // attaches the servo on pin 9 to the servo object
+  myServo.attach(myServoPin);
+  myServo.write(0);
+  delay(100);
+  Serial.begin(9600);
+  Serial.println("SM Working");
+  Serial.println("------------------");
 }
 
 void loop() {
-  myServo.write(degreeOfMovement);                // sets the servo position according to the set value
-  delay(5000);                                    // waits for the servo to get there
-  myServo.write(0);                               // returns the servo to 0
-  delay(5000);                                    // waits for the servo to get there
+
+   unsigned long rangeInCM = myUSsensor.MeasureInCentimeters();
+  Serial.println(rangeInCM);
+ 
+ if (rangeInCM >= 10) {
+   myServo.write(180);
+ } else if (rangeInCM <=20) {
+   myServo.write(360);
+ } else {
+   myServo.write(0);
+ }
 }
