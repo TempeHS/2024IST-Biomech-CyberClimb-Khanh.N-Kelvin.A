@@ -24,8 +24,6 @@ void setup() {
   myServo.write(0);
   delay(100);
   Serial.begin(9600);
-  Serial.println("SM Working");
-  Serial.println("------------------");
 }
 
 void loop() {
@@ -33,10 +31,10 @@ void loop() {
    unsigned long rangeInCM = myUSsensor.MeasureInCentimeters();
   Serial.println(rangeInCM);
  
- if (rangeInCM >= 10) {
+ if (rangeInCM >= 3) {
    myServo.write(180);
- } else if (rangeInCM <=20) {
-   myServo.write(360);
+ } else if (rangeInCM <=3) {
+   myServo.write(0);
  } else {
    myServo.write(0);
  }
