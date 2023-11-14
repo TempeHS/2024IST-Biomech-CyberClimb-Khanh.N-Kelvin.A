@@ -21,8 +21,6 @@ Ultrasonic myUSsensor(myUSPin);
 
 void setup() {
   myServo.attach(myServoPin);
-  myServo.write(0);
-  delay(100);
   Serial.begin(9600);
 }
 
@@ -30,7 +28,7 @@ void loop() {
 
    unsigned long rangeInCM = myUSsensor.MeasureInCentimeters();
   Serial.println(rangeInCM);
- 
+
  if (rangeInCM >= 3) {
    myServo.write(180);
  } else if (rangeInCM <=3) {
