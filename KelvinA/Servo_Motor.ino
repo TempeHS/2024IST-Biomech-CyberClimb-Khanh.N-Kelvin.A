@@ -1,19 +1,9 @@
-/*
-  Purpose: Basic example of a 180deg Micro Servo connected via a Seead Screw Terminal
-  Notes: 
-    1. Connect to a Digital Pin
-    2. 180 Degree ROM 0-180 values
-  Author:  Ben Jones 13/7/23
-  Contact: benjmain.jones21@det.nsw.edu.au
-  Source: https://wiki.seeedstudio.com/Grove-Servo/
-*/
-
 #include <Servo.h>
 #include "Ultrasonic.h"
 
-Servo myServo;  // create servo object to control a servo
+Servo myServo; 
 
-static unsigned int degreeOfMovement = 180;    // variable to read the value from the analog pin
+static unsigned int degreeOfMovement = 180;   
 static unsigned int myServoPin = 7;
 static unsigned int myUSPin = 6;
 
@@ -33,7 +23,7 @@ void loop() {
    myServo.write(180);
  } else if (rangeInCM <=3) {
    myServo.write(0);
- } else {
+ } else (rangeInCM =0); {
    myServo.write(0);
  }
 }
