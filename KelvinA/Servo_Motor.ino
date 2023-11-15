@@ -20,9 +20,9 @@ void loop() {
    unsigned long rangeInCM = myUSsensor.MeasureInCentimeters();
   Serial.println(rangeInCM);
 
- if (rangeInCM >= 3) {
+ if (rangeInCM > 3) {
    myServo.write(180);
- } else if (rangeInCM <=3) {
+ } else if (rangeInCM < 3) {
    myServo.write(0);
  } else {
    myServo.write(0);
