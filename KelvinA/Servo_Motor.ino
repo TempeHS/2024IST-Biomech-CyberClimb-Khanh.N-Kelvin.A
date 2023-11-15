@@ -12,6 +12,7 @@ Ultrasonic myUSsensor(myUSPin);
 void setup() {
   myServo.attach(myServoPin);
   Serial.begin(9600);
+
 }
 
 void loop() {
@@ -23,7 +24,7 @@ void loop() {
    myServo.write(180);
  } else if (rangeInCM <=3) {
    myServo.write(0);
- } else (rangeInCM =0); {
+ } else {
    myServo.write(0);
  }
 }
