@@ -24,7 +24,5 @@ void loop() {
    myServo.write(180);
  } else if (rangeInCM < 3) {
    myServo.write(0);
- } else {
-   myServo.write(0);
  }
 }
